@@ -1,0 +1,13 @@
+digraph "Dominator tree for 'main' function" {
+	label="Dominator tree for 'main' function";
+
+	Node0x55b042862ab0 [shape=record,label="{entry:\l  %retval = alloca i32, align 4\l  %n = alloca i32, align 4\l  %saved_stack = alloca i8*, align 8\l  %__vla_expr0 = alloca i64, align 8\l  %i = alloca i32, align 4\l  store i32 0, i32* %retval, align 4\l  %call = call noundef nonnull align 8 dereferenceable(16)\l... %\"class.std::basic_istream\"* @_ZNSirsERi(%\"class.std::basic_istream\"* noundef\l... nonnull align 8 dereferenceable(16) @_ZSt3cin, i32* noundef nonnull align 4\l... dereferenceable(4) %n)\l  %0 = load i32, i32* %n, align 4\l  %1 = zext i32 %0 to i64\l  %2 = call i8* @llvm.stacksave()\l  store i8* %2, i8** %saved_stack, align 8\l  %vla = alloca i8, i64 %1, align 16\l  store i64 %1, i64* %__vla_expr0, align 8\l  store i32 0, i32* %i, align 4\l  br label %for.cond\l}"];
+	Node0x55b042862ab0 -> Node0x55b042862b10;
+	Node0x55b042862b10 [shape=record,label="{for.cond:                                         \l  %3 = load i32, i32* %i, align 4\l  %4 = load i32, i32* %n, align 4\l  %cmp = icmp slt i32 %3, %4\l  br i1 %cmp, label %for.body, label %for.end\l}"];
+	Node0x55b042862b10 -> Node0x55b042862b70;
+	Node0x55b042862b10 -> Node0x55b042862c30;
+	Node0x55b042862b70 [shape=record,label="{for.body:                                         \l  %5 = load i32, i32* %i, align 4\l  %idxprom = sext i32 %5 to i64\l  %arrayidx = getelementptr inbounds i8, i8* %vla, i64 %idxprom\l  %call1 = call noundef nonnull align 8 dereferenceable(16)\l... %\"class.std::basic_istream\"*\l... @_ZStrsIcSt11char_traitsIcEERSt13basic_istreamIT_T0_ES6_RS3_(%\"class.std::basi\l...c_istream\"* noundef nonnull align 8 dereferenceable(16) @_ZSt3cin, i8* noundef\l... nonnull align 1 dereferenceable(1) %arrayidx)\l  br label %for.inc\l}"];
+	Node0x55b042862b70 -> Node0x55b042862bd0;
+	Node0x55b042862bd0 [shape=record,label="{for.inc:                                          \l  %6 = load i32, i32* %i, align 4\l  %inc = add nsw i32 %6, 1\l  store i32 %inc, i32* %i, align 4\l  br label %for.cond, !llvm.loop !4\l}"];
+	Node0x55b042862c30 [shape=record,label="{for.end:                                          \l  %7 = load i32, i32* %n, align 4\l  %call2 = call noundef zeroext i1 @_Z12isPalindromeiPc(i32 noundef %7, i8*\l... noundef %vla)\l  %call3 = call noundef nonnull align 8 dereferenceable(8)\l... %\"class.std::basic_ostream\"* @_ZNSolsEb(%\"class.std::basic_ostream\"* noundef\l... nonnull align 8 dereferenceable(8) @_ZSt4cout, i1 noundef zeroext %call2)\l  store i32 0, i32* %retval, align 4\l  %8 = load i8*, i8** %saved_stack, align 8\l  call void @llvm.stackrestore(i8* %8)\l  %9 = load i32, i32* %retval, align 4\l  ret i32 %9\l}"];
+}

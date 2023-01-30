@@ -1,0 +1,19 @@
+digraph "CFG for '_Z12isPalindromeiPc' function" {
+	label="CFG for '_Z12isPalindromeiPc' function";
+
+	Node0x55a29a0323f0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#dbdcde70",label="{entry:\l  %retval = alloca i1, align 1\l  %n.addr = alloca i32, align 4\l  %str.addr = alloca i8*, align 8\l  %i = alloca i32, align 4\l  %j = alloca i32, align 4\l  store i32 %n, i32* %n.addr, align 4\l  store i8* %str, i8** %str.addr, align 8\l  %0 = load i32, i32* %n.addr, align 4\l  %1 = zext i32 %0 to i64\l  store i32 0, i32* %i, align 4\l  %2 = load i32, i32* %n.addr, align 4\l  %sub = sub nsw i32 %2, 1\l  store i32 %sub, i32* %j, align 4\l  br label %while.cond\l}"];
+	Node0x55a29a0323f0 -> Node0x55a29a032b90;
+	Node0x55a29a032b90 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870",label="{while.cond:                                       \l  %3 = load i32, i32* %i, align 4\l  %4 = load i32, i32* %j, align 4\l  %cmp = icmp slt i32 %3, %4\l  br i1 %cmp, label %while.body, label %while.end\l|{<s0>T|<s1>F}}"];
+	Node0x55a29a032b90:s0 -> Node0x55a29a032e40;
+	Node0x55a29a032b90:s1 -> Node0x55a29a032e90;
+	Node0x55a29a032e40 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70",label="{while.body:                                       \l  %5 = load i8*, i8** %str.addr, align 8\l  %6 = load i32, i32* %i, align 4\l  %idxprom = sext i32 %6 to i64\l  %arrayidx = getelementptr inbounds i8, i8* %5, i64 %idxprom\l  %7 = load i8, i8* %arrayidx, align 1\l  %conv = sext i8 %7 to i32\l  %8 = load i8*, i8** %str.addr, align 8\l  %9 = load i32, i32* %j, align 4\l  %idxprom1 = sext i32 %9 to i64\l  %arrayidx2 = getelementptr inbounds i8, i8* %8, i64 %idxprom1\l  %10 = load i8, i8* %arrayidx2, align 1\l  %conv3 = sext i8 %10 to i32\l  %cmp4 = icmp ne i32 %conv, %conv3\l  br i1 %cmp4, label %if.then, label %if.end\l|{<s0>T|<s1>F}}"];
+	Node0x55a29a032e40:s0 -> Node0x55a29a032d60;
+	Node0x55a29a032e40:s1 -> Node0x55a29a033950;
+	Node0x55a29a032d60 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#b9d0f970",label="{if.then:                                          \l  store i1 false, i1* %retval, align 1\l  br label %return\l}"];
+	Node0x55a29a032d60 -> Node0x55a29a033b90;
+	Node0x55a29a033950 [shape=record,color="#b70d28ff", style=filled, fillcolor="#bb1b2c70",label="{if.end:                                           \l  %11 = load i32, i32* %i, align 4\l  %inc = add nsw i32 %11, 1\l  store i32 %inc, i32* %i, align 4\l  %12 = load i32, i32* %j, align 4\l  %dec = add nsw i32 %12, -1\l  store i32 %dec, i32* %j, align 4\l  br label %while.cond, !llvm.loop !4\l}"];
+	Node0x55a29a033950 -> Node0x55a29a032b90;
+	Node0x55a29a032e90 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#b9d0f970",label="{while.end:                                        \l  store i1 true, i1* %retval, align 1\l  br label %return\l}"];
+	Node0x55a29a032e90 -> Node0x55a29a033b90;
+	Node0x55a29a033b90 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#dbdcde70",label="{return:                                           \l  %13 = load i1, i1* %retval, align 1\l  ret i1 %13\l}"];
+}

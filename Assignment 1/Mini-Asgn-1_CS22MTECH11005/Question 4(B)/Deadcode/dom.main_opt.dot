@@ -1,0 +1,11 @@
+digraph "Dominator tree for 'main' function" {
+	label="Dominator tree for 'main' function";
+
+	Node0x55adbea718c0 [shape=record,label="{entry:\l  %cmp = icmp slt i32 10, 0\l  br i1 %cmp, label %if.then, label %if.else\l}"];
+	Node0x55adbea718c0 -> Node0x55adbea71920;
+	Node0x55adbea718c0 -> Node0x55adbea71980;
+	Node0x55adbea718c0 -> Node0x55adbea719e0;
+	Node0x55adbea71920 [shape=record,label="{if.then:                                          \l  %call = call noundef nonnull align 8 dereferenceable(8)\l... %\"class.std::basic_ostream\"*\l... @_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc(%\"class.std::basic_os\l...tream\"* noundef nonnull align 8 dereferenceable(8) @_ZSt4cout, i8* noundef\l... getelementptr inbounds ([20 x i8], [20 x i8]* @.str, i64 0, i64 0))\l  br label %if.end\l}"];
+	Node0x55adbea71980 [shape=record,label="{if.end:                                           \l  ret i32 0\l}"];
+	Node0x55adbea719e0 [shape=record,label="{if.else:                                          \l  %call1 = call noundef nonnull align 8 dereferenceable(8)\l... %\"class.std::basic_ostream\"*\l... @_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc(%\"class.std::basic_os\l...tream\"* noundef nonnull align 8 dereferenceable(8) @_ZSt4cout, i8* noundef\l... getelementptr inbounds ([24 x i8], [24 x i8]* @.str.1, i64 0, i64 0))\l  br label %if.end\l}"];
+}

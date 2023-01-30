@@ -1,0 +1,12 @@
+digraph "CFG for '_Z9mergeSortPiii' function" {
+	label="CFG for '_Z9mergeSortPiii' function";
+
+	Node0x56090b3a75e0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870",label="{entry:\l  %array.addr = alloca i32*, align 8\l  %begin.addr = alloca i32, align 4\l  %end.addr = alloca i32, align 4\l  %mid = alloca i32, align 4\l  store i32* %array, i32** %array.addr, align 8\l  store i32 %begin, i32* %begin.addr, align 4\l  store i32 %end, i32* %end.addr, align 4\l  %0 = load i32, i32* %begin.addr, align 4\l  %1 = load i32, i32* %end.addr, align 4\l  %cmp = icmp sge i32 %0, %1\l  br i1 %cmp, label %if.then, label %if.end\l|{<s0>T|<s1>F}}"];
+	Node0x56090b3a75e0:s0 -> Node0x56090b3a7ba0;
+	Node0x56090b3a75e0:s1 -> Node0x56090b3a7c10;
+	Node0x56090b3a7ba0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#f59c7d70",label="{if.then:                                          \l  br label %return\l}"];
+	Node0x56090b3a7ba0 -> Node0x56090b3a7d30;
+	Node0x56090b3a7c10 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#f59c7d70",label="{if.end:                                           \l  %2 = load i32, i32* %begin.addr, align 4\l  %3 = load i32, i32* %end.addr, align 4\l  %4 = load i32, i32* %begin.addr, align 4\l  %sub = sub nsw i32 %3, %4\l  %div = sdiv i32 %sub, 2\l  %add = add nsw i32 %2, %div\l  store i32 %add, i32* %mid, align 4\l  %5 = load i32*, i32** %array.addr, align 8\l  %6 = load i32, i32* %begin.addr, align 4\l  %7 = load i32, i32* %mid, align 4\l  call void @_Z9mergeSortPiii(i32* noundef %5, i32 noundef %6, i32 noundef %7)\l  %8 = load i32*, i32** %array.addr, align 8\l  %9 = load i32, i32* %mid, align 4\l  %add1 = add nsw i32 %9, 1\l  %10 = load i32, i32* %end.addr, align 4\l  call void @_Z9mergeSortPiii(i32* noundef %8, i32 noundef %add1, i32 noundef\l... %10)\l  %11 = load i32*, i32** %array.addr, align 8\l  %12 = load i32, i32* %begin.addr, align 4\l  %13 = load i32, i32* %mid, align 4\l  %14 = load i32, i32* %end.addr, align 4\l  call void @_Z5mergePiiii(i32* noundef %11, i32 noundef %12, i32 noundef %13,\l... i32 noundef %14)\l  br label %return\l}"];
+	Node0x56090b3a7c10 -> Node0x56090b3a7d30;
+	Node0x56090b3a7d30 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870",label="{return:                                           \l  ret void\l}"];
+}

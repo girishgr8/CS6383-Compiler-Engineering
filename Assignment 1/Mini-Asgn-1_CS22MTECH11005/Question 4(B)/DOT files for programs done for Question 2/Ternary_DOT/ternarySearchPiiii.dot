@@ -1,0 +1,34 @@
+digraph "CFG for '_Z13ternarySearchPiiii' function" {
+	label="CFG for '_Z13ternarySearchPiiii' function";
+
+	Node0x55e545feefb0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870",label="{entry:\l  %retval = alloca i32, align 4\l  %arr.addr = alloca i32*, align 8\l  %key.addr = alloca i32, align 4\l  %l.addr = alloca i32, align 4\l  %r.addr = alloca i32, align 4\l  %mid1 = alloca i32, align 4\l  %mid2 = alloca i32, align 4\l  store i32* %arr, i32** %arr.addr, align 8\l  store i32 %key, i32* %key.addr, align 4\l  store i32 %l, i32* %l.addr, align 4\l  store i32 %r, i32* %r.addr, align 4\l  %0 = load i32, i32* %l.addr, align 4\l  %1 = load i32, i32* %r.addr, align 4\l  %cmp = icmp sle i32 %0, %1\l  br i1 %cmp, label %if.then, label %if.end27\l|{<s0>T|<s1>F}}"];
+	Node0x55e545feefb0:s0 -> Node0x55e545fef970;
+	Node0x55e545feefb0:s1 -> Node0x55e545fef9e0;
+	Node0x55e545fef970 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#de614d70",label="{if.then:                                          \l  %2 = load i32, i32* %l.addr, align 4\l  %3 = load i32, i32* %r.addr, align 4\l  %4 = load i32, i32* %l.addr, align 4\l  %sub = sub nsw i32 %3, %4\l  %div = sdiv i32 %sub, 3\l  %add = add nsw i32 %2, %div\l  store i32 %add, i32* %mid1, align 4\l  %5 = load i32, i32* %r.addr, align 4\l  %6 = load i32, i32* %r.addr, align 4\l  %7 = load i32, i32* %l.addr, align 4\l  %sub1 = sub nsw i32 %6, %7\l  %div2 = sdiv i32 %sub1, 3\l  %sub3 = sub nsw i32 %5, %div2\l  store i32 %sub3, i32* %mid2, align 4\l  %8 = load i32*, i32** %arr.addr, align 8\l  %9 = load i32, i32* %mid1, align 4\l  %idxprom = sext i32 %9 to i64\l  %arrayidx = getelementptr inbounds i32, i32* %8, i64 %idxprom\l  %10 = load i32, i32* %arrayidx, align 4\l  %11 = load i32, i32* %key.addr, align 4\l  %cmp4 = icmp eq i32 %10, %11\l  br i1 %cmp4, label %if.then5, label %if.end\l|{<s0>T|<s1>F}}"];
+	Node0x55e545fef970:s0 -> Node0x55e545fefc90;
+	Node0x55e545fef970:s1 -> Node0x55e545ff0b00;
+	Node0x55e545fefc90 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#f59c7d70",label="{if.then5:                                         \l  %12 = load i32, i32* %mid1, align 4\l  store i32 %12, i32* %retval, align 4\l  br label %return\l}"];
+	Node0x55e545fefc90 -> Node0x55e545ff0d20;
+	Node0x55e545ff0b00 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#f59c7d70",label="{if.end:                                           \l  %13 = load i32*, i32** %arr.addr, align 8\l  %14 = load i32, i32* %mid2, align 4\l  %idxprom6 = sext i32 %14 to i64\l  %arrayidx7 = getelementptr inbounds i32, i32* %13, i64 %idxprom6\l  %15 = load i32, i32* %arrayidx7, align 4\l  %16 = load i32, i32* %key.addr, align 4\l  %cmp8 = icmp eq i32 %15, %16\l  br i1 %cmp8, label %if.then9, label %if.end10\l|{<s0>T|<s1>F}}"];
+	Node0x55e545ff0b00:s0 -> Node0x55e545ff1150;
+	Node0x55e545ff0b00:s1 -> Node0x55e545ff11d0;
+	Node0x55e545ff1150 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#f3c7b170",label="{if.then9:                                         \l  %17 = load i32, i32* %mid2, align 4\l  store i32 %17, i32* %retval, align 4\l  br label %return\l}"];
+	Node0x55e545ff1150 -> Node0x55e545ff0d20;
+	Node0x55e545ff11d0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#f3c7b170",label="{if.end10:                                         \l  %18 = load i32, i32* %key.addr, align 4\l  %19 = load i32*, i32** %arr.addr, align 8\l  %20 = load i32, i32* %mid1, align 4\l  %idxprom11 = sext i32 %20 to i64\l  %arrayidx12 = getelementptr inbounds i32, i32* %19, i64 %idxprom11\l  %21 = load i32, i32* %arrayidx12, align 4\l  %cmp13 = icmp slt i32 %18, %21\l  br i1 %cmp13, label %if.then14, label %if.else\l|{<s0>T|<s1>F}}"];
+	Node0x55e545ff11d0:s0 -> Node0x55e545ff18b0;
+	Node0x55e545ff11d0:s1 -> Node0x55e545ff1930;
+	Node0x55e545ff18b0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d9dce170",label="{if.then14:                                        \l  %22 = load i32*, i32** %arr.addr, align 8\l  %23 = load i32, i32* %key.addr, align 4\l  %24 = load i32, i32* %l.addr, align 4\l  %25 = load i32, i32* %mid1, align 4\l  %sub15 = sub nsw i32 %25, 1\l  %call = call noundef i32 @_Z13ternarySearchPiiii(i32* noundef %22, i32\l... noundef %23, i32 noundef %24, i32 noundef %sub15)\l  store i32 %call, i32* %retval, align 4\l  br label %return\l}"];
+	Node0x55e545ff18b0 -> Node0x55e545ff0d20;
+	Node0x55e545ff1930 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#d9dce170",label="{if.else:                                          \l  %26 = load i32, i32* %key.addr, align 4\l  %27 = load i32*, i32** %arr.addr, align 8\l  %28 = load i32, i32* %mid2, align 4\l  %idxprom16 = sext i32 %28 to i64\l  %arrayidx17 = getelementptr inbounds i32, i32* %27, i64 %idxprom16\l  %29 = load i32, i32* %arrayidx17, align 4\l  %cmp18 = icmp sgt i32 %26, %29\l  br i1 %cmp18, label %if.then19, label %if.end22\l|{<s0>T|<s1>F}}"];
+	Node0x55e545ff1930:s0 -> Node0x55e545ff2b20;
+	Node0x55e545ff1930:s1 -> Node0x55e545ff2ba0;
+	Node0x55e545ff2b20 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#b9d0f970",label="{if.then19:                                        \l  %30 = load i32*, i32** %arr.addr, align 8\l  %31 = load i32, i32* %key.addr, align 4\l  %32 = load i32, i32* %mid2, align 4\l  %add20 = add nsw i32 %32, 1\l  %33 = load i32, i32* %r.addr, align 4\l  %call21 = call noundef i32 @_Z13ternarySearchPiiii(i32* noundef %30, i32\l... noundef %31, i32 noundef %add20, i32 noundef %33)\l  store i32 %call21, i32* %retval, align 4\l  br label %return\l}"];
+	Node0x55e545ff2b20 -> Node0x55e545ff0d20;
+	Node0x55e545ff2ba0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#b9d0f970",label="{if.end22:                                         \l  br label %if.end23\l}"];
+	Node0x55e545ff2ba0 -> Node0x55e545ff3440;
+	Node0x55e545ff3440 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#b9d0f970",label="{if.end23:                                         \l  %34 = load i32*, i32** %arr.addr, align 8\l  %35 = load i32, i32* %key.addr, align 4\l  %36 = load i32, i32* %mid1, align 4\l  %add24 = add nsw i32 %36, 1\l  %37 = load i32, i32* %mid2, align 4\l  %sub25 = sub nsw i32 %37, 1\l  %call26 = call noundef i32 @_Z13ternarySearchPiiii(i32* noundef %34, i32\l... noundef %35, i32 noundef %add24, i32 noundef %sub25)\l  store i32 %call26, i32* %retval, align 4\l  br label %return\l}"];
+	Node0x55e545ff3440 -> Node0x55e545ff0d20;
+	Node0x55e545fef9e0 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#de614d70",label="{if.end27:                                         \l  store i32 -1, i32* %retval, align 4\l  br label %return\l}"];
+	Node0x55e545fef9e0 -> Node0x55e545ff0d20;
+	Node0x55e545ff0d20 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870",label="{return:                                           \l  %38 = load i32, i32* %retval, align 4\l  ret i32 %38\l}"];
+}

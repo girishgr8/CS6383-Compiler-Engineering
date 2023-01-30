@@ -1,0 +1,11 @@
+digraph "Dominator tree for '_Z3fibi' function" {
+	label="Dominator tree for '_Z3fibi' function";
+
+	Node0x55b3da6338c0 [shape=record,label="{entry:\l  %retval = alloca i32, align 4\l  %n.addr = alloca i32, align 4\l  store i32 %n, i32* %n.addr, align 4\l  %0 = load i32, i32* %n.addr, align 4\l  %cmp = icmp sle i32 %0, 1\l  br i1 %cmp, label %if.then, label %if.end\l}"];
+	Node0x55b3da6338c0 -> Node0x55b3da633920;
+	Node0x55b3da6338c0 -> Node0x55b3da633980;
+	Node0x55b3da6338c0 -> Node0x55b3da6339e0;
+	Node0x55b3da633920 [shape=record,label="{if.then:                                          \l  %1 = load i32, i32* %n.addr, align 4\l  store i32 %1, i32* %retval, align 4\l  br label %return\l}"];
+	Node0x55b3da633980 [shape=record,label="{return:                                           \l  %4 = load i32, i32* %retval, align 4\l  ret i32 %4\l}"];
+	Node0x55b3da6339e0 [shape=record,label="{if.end:                                           \l  %2 = load i32, i32* %n.addr, align 4\l  %sub = sub nsw i32 %2, 1\l  %call = call noundef i32 @_Z3fibi(i32 noundef %sub)\l  %3 = load i32, i32* %n.addr, align 4\l  %sub1 = sub nsw i32 %3, 2\l  %call2 = call noundef i32 @_Z3fibi(i32 noundef %sub1)\l  %add = add nsw i32 %call, %call2\l  store i32 %add, i32* %retval, align 4\l  br label %return\l}"];
+}

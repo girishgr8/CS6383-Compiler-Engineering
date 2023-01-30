@@ -1,0 +1,12 @@
+digraph "CFG for 'main' function" {
+	label="CFG for 'main' function";
+
+	Node0x55f6bf3b6230 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870",label="{entry:\l  %cmp = icmp slt i32 10, 0\l  br i1 %cmp, label %if.then, label %if.else\l|{<s0>T|<s1>F}}"];
+	Node0x55f6bf3b6230:s0 -> Node0x55f6bf3b6410;
+	Node0x55f6bf3b6230:s1 -> Node0x55f6bf3b6480;
+	Node0x55f6bf3b6410 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#f7b39670",label="{if.then:                                          \l  %call = call noundef nonnull align 8 dereferenceable(8)\l... %\"class.std::basic_ostream\"*\l... @_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc(%\"class.std::basic_os\l...tream\"* noundef nonnull align 8 dereferenceable(8) @_ZSt4cout, i8* noundef\l... getelementptr inbounds ([20 x i8], [20 x i8]* @.str, i64 0, i64 0))\l  br label %if.end\l}"];
+	Node0x55f6bf3b6410 -> Node0x55f6bf3b68f0;
+	Node0x55f6bf3b6480 [shape=record,color="#b70d28ff", style=filled, fillcolor="#e8765c70",label="{if.else:                                          \l  %call1 = call noundef nonnull align 8 dereferenceable(8)\l... %\"class.std::basic_ostream\"*\l... @_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc(%\"class.std::basic_os\l...tream\"* noundef nonnull align 8 dereferenceable(8) @_ZSt4cout, i8* noundef\l... getelementptr inbounds ([24 x i8], [24 x i8]* @.str.1, i64 0, i64 0))\l  br label %if.end\l}"];
+	Node0x55f6bf3b6480 -> Node0x55f6bf3b68f0;
+	Node0x55f6bf3b68f0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870",label="{if.end:                                           \l  ret i32 0\l}"];
+}
